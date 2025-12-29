@@ -1,37 +1,49 @@
 ### Wichtel-Generator
 
-### Mit diesem Generatorprojekt soll eine Gruppe von Menschen eine Losung durchführen können, damit jeder
-### eine Person erhält, welche er beschenken darf.
+### Mit diesem Wichtel-Generator sollen Menschen nach einer Nutzereingabe einen 
+### zufälligen anderen Menschen ziehen, um diesen an Weihnachten zu beschenken.
+### Danach wird eine E-Mail versendet, um die Person über den gezogenen Wichtel
+### zu informieren
+### Version 1.0
 
-### Namenseingabe
+import random ### Bibliothek zur Auswahl einer Person
+import datetime ### Nur für die Jahresangabe :)
 
-anzahl_teilnehmer = int(input("Wieviele Teilnehmer gibt es?"))
-int(anzahl_teilnehmer)
+anzahl_teilnehmer = int(input("Wieviele Teilnehmer gibt es?")) ### Festlegung der Teilnehmerzahl
 print(f"In dieser Runde gibt es insgesamt {anzahl_teilnehmer} Wichtel.")
-teilnehmerliste = []
+
+teilnehmer_schenker = [] ### Liste der Personen, welche ein Geschenk haben
+teilnehmer_beschenkt = [] ### Identische Liste der Personen, welche ein Geschenk erhalten
+
+### Schleife zur Erstellung der Teilnehmerliste
 
 while anzahl_teilnehmer > 0:
     teilnehmer = input("Bitte gib deinen Vornamen ein!")
-    teilnehmerliste.append(teilnehmer)
+    teilnehmer_schenker.append(teilnehmer)
+    teilnehmer_beschenkt.append(teilnehmer)
     anzahl_teilnehmer = anzahl_teilnehmer - 1
 
-print(teilnehmerliste)
+### Ausgabe der Listen zur Kontrolle 
 
+print(teilnehmer_schenker)
+print(teilnehmer_beschenkt)
 
-### Speicherung der Namen
+### Ziehung der Wichtel
 
-### teilnehmerliste = []
-### teilnehmerliste.append(teilnehmer)
-### print(teilnehmerliste)
+for name in teilnehmer_schenker:
+    ziehung = random.choice(teilnehmer_beschenkt)
+    teilnehmer_beschenkt.remove(ziehung)
+    print(f"Hallo, {name}, du hast dieses Mal {ziehung} gezogen.")
 
-### Ziehung der Namen
+### Ausschluss der Option den eigenen Namen zu ziehen
 
+### Sendung der E-Mail an die Person "teilnehmer_schenker"
 
+### Löschung der "Schenker"-Liste zur erneuten Verwendung des Programms
 
-### Ausschluss der Ziehung der gleichen Namen (jeder nur 1x)
+teilnehmer_schenker.clear()
 
-### Anzahl der Ziehungen
+### Abschluss des Programms
 
-### Entfernung des Namens aus dem Topf
+print(f"Frohe Weihnachten und ein schönes Neues Jahr!")
 
-### Automatische Sendung des Namens per E-Mail
