@@ -1,5 +1,10 @@
 ### Wichtel-Generator
 
+### Story: Wir haben an Weihnachten eine App genutzt, um zu Wichteln. 
+### Zwei Personen haben dabei das dritte Jahr hintereinander denselben Menschen gezogen,
+### außerdem haben zwei Personen das gleiche Wichtel gehabt. Um technische
+### Fehler auszuschließen, dachte ich, ich schreibe ein eigenes Script.
+
 ### Mit diesem Wichtel-Generator sollen Menschen nach einer Nutzereingabe einen 
 ### zufälligen anderen Menschen ziehen, um diesen an Weihnachten zu beschenken.
 ### Danach wird eine E-Mail versendet, um die Person über den gezogenen Wichtel
@@ -46,4 +51,5 @@ teilnehmer_schenker.clear()
 ### Abschluss des Programms
 
 print(f"Frohe Weihnachten und ein schönes Neues Jahr!")
+
 
